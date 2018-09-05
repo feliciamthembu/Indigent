@@ -1,0 +1,43 @@
+
+<ons-page ng-controller="searchController">
+      <ons-toolbar>
+        <div class="left">
+      <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
+    </div>
+          
+        <div class="center">Subscribe to Points of Interest</div>
+      </ons-toolbar>
+
+    <div class="formarea">
+        <div class="form-row">
+            
+      <ons-list modifier="inset" class="settings-list">
+        <ons-list-item>
+          School
+          <ons-switch modifier="list-item" ng-model="school"></ons-switch>
+        </ons-list-item>
+
+        <ons-list-item>
+          Parks
+          <ons-switch modifier="list-item" ng-model="parks"></ons-switch>
+        </ons-list-item>
+          
+         <ons-list-item>
+          Art Centre
+          <ons-switch modifier="list-item" ng-model="artcentre"></ons-switch>
+        </ons-list-item>
+          
+         <ons-list-item>
+          Voting Stations
+          <ons-switch modifier="list-item" ng-model="votingstations" checked></ons-switch>
+        </ons-list-item>
+      </ons-list>
+            
+        </div>
+    
+        <div class="vspc form-row">
+            <ons-button id="moreButton" modifier="large" should-spin="{{isFetching}}" ng-click="showPOI()">Search</ons-button>
+            </div>
+      </div>
+
+</ons-page>

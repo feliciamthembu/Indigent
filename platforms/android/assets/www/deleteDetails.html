@@ -1,0 +1,167 @@
+<ons-page ng-controller="indigentController" ng-init="showDeleteDetails()">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Delete Assignment</div>
+		<div class="right">
+			
+			<ons-toolbar-button ng-click="deleteButtonDialog(applicantDetails)"><i class="fa fa-ban" aria-hidden="true"></i>DELETE</ons-toolbar-button>
+        </div>
+
+    </ons-toolbar>
+    <ons-scroller style="height: 100%; width: 100%">
+        <div class="app-page">
+            <div class="app-page-photo">
+
+                <ons-list modifier="inset" style="margin-top: 10px" class="scrollme" ng-scrollbar is-bar-shown="true">
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                            
+                            Application Reference No <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.applicationRefNo}}
+							</span>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                           
+                            EMM Account Number <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.emmAccountNo}}</span>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                            
+                            Application Type <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.applicantKind}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                     <ons-list-item>
+                        <div class="app-open-desc">
+                            
+                            Indigent Application Type <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.applicationType}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                            
+                            Application Date <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.applicationDate | date:'dd/MM/yyyy'}}</span>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Customer Care Area <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.applicationCCC}}</span>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            ID Number <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.idNo}}</span>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Passport Number <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.passportNo}}</span>
+                        </div>
+                    </ons-list-item>
+
+
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Title <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.title}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Initials <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.initials}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            First Name <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.firstNames}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Last Name <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.surname}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Gender <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.gender}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Date of Birth <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.birthDate | date:'yyyy-MM-dd'}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Marital Status <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.maritalStatus}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    
+                     <ons-list-item>
+                        <div class="app-open-desc">
+
+                            ResidentialAddress <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.residentialAddress.addressLine1}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    
+                     <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Suburb <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.residentialAddress.suburb}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            wardNo <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.residentialAddress.wardNo}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    
+                    
+                    
+                    
+                    
+
+
+                </ons-list>
+				<!--<br>
+				<div align="center">
+					
+					<button  align="center" class="button button-block button-linkedin" ng-click="deleteButtonDialog()">
+							 Delete
+					</button>
+				</div>-->
+				<br>
+<!--
+				<button class="button button-block button-linkedin" ng-click="userlocation()">
+                         Save Location
+                </button>
+-->
+            </div>
+        </div>
+    </ons-scroller>
+</ons-page>

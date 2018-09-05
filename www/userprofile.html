@@ -1,0 +1,86 @@
+<ons-page ng-controller="userProfileController" ng-init="init()">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Profile</div>
+        
+      </ons-toolbar>
+
+      <div class="profile-card">
+
+        
+        <img src="images/profiles/profile.png" width="42" class="to-image">
+        <div class="profile-name">{{firstname}} {{lastname}}</div>
+        <div class="profile-id">{{email}}</div>
+        <div class="profile-desc"></div>
+
+      </div>
+<!--
+
+      <ons-list>
+        <ons-list-item>
+          <ons-row>
+            <ons-col class="info-col">
+              <div class="info-num">{{crmnumber}}</div>
+              <div class="info-unit">CRM Number</div>
+            </ons-col>
+            <ons-col class="info-col">
+              <div class="info-num">{{idnumber}}</div>
+              <div class="info-unit">ID Number</div>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
+
+-->
+
+      <br>
+    
+    <form name="profileForm" class="elegant-aero"  ng-submit="updateProfile()">
+    <ons-list modifier="inset" style="margin-top: 10px">
+
+        <ons-list-item>
+          <input type="text" class="text-input text-input--transparent" placeholder="First Name" ng-model="firstname" style="width: 100%" required>
+        </ons-list-item>
+        
+        <ons-list-item>
+          <input type="text" class="text-input text-input--transparent" placeholder="Last Name" ng-model="lastname" style="width: 100%" required>
+        </ons-list-item>
+        
+        <ons-list-item>
+          <input type="text" class="text-input text-input--transparent" placeholder="ID Number (OPTIONAL)" ng-model="idnumber" style="width: 100%"> 
+        </ons-list-item>
+        
+         <ons-list-item>
+          <input type="text" class="text-input text-input--transparent" placeholder="Email" ng-model="email" style="width: 100%" required>
+        </ons-list-item>
+
+      </ons-list>
+        
+        <ons-row class="profile-wrapper" style="padding: 10px;">
+            <button class="button button--large--cta" type="submit">Update Profile</button>
+        </ons-row>
+        
+    </form>
+   
+    
+   <!-- <div style="padding: 10px 9px">
+        <ons-button modifier="large" style="margin: 0 auto;" ng-click="viewMeter();">
+          My Meter Information
+        </ons-button>
+      </div>
+-->
+    <!--<ons-list modifier="inset" style="margin-top: 10px" ng-click="viewCaseHistory();">
+        <ons-list-item modifier="chevron">
+          View Case History
+        </ons-list-item>
+
+      </ons-list>
+    
+    <ons-list modifier="inset" style="margin-top: 10px" ng-click="viewMeter();">
+        <ons-list-item modifier="chevron">
+          My Meter Information
+        </ons-list-item>-->
+
+      </ons-list>
+
+    </ons-page>

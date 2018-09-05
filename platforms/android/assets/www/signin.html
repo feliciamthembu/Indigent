@@ -1,0 +1,23 @@
+ <ons-page ng-controller="indigentController" class="page__background">
+      <ons-toolbar>
+        <div class="center">Sign In</div>
+		<div class="right"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></div>
+      </ons-toolbar>
+
+      <div class="login-form">
+
+		  
+        <input type="text" class="text-input--underbar" ng-model="username" placeholder="User ID" required>
+        <input type="password" class="text-input--underbar" ng-model="password" placeholder="Password" required>
+        <br><br>
+		  <ons-button modifier="large" class="login-button" ng-click="login()">  Log In</ons-button>
+        <br><br>
+        
+          
+          
+      </div>
+     
+     <div id="dvMap" style="width: 300px; height: 400px">
+          </div>
+
+    </ons-page>

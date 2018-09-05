@@ -1,0 +1,55 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "cordova-plugin-media": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    },
+    "cordova-plugin-file-opener2": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.ekurhuleni.indigentapp"
+    }
+  }
+}

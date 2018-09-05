@@ -1,0 +1,38 @@
+<style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        #chart1, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 10000px;
+            width: 100%;
+        }
+    </style>
+<ons-page ng-controller="indigentController" ng-init="testWSDL()">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Indigent</div>
+    </ons-toolbar>
+
+         
+    <p align="center" ng-hide="aggregatedList.length === 0">
+      Highest Employed Ward is: <b>{{employedHighWard}}</b> with <b>{{employedHighValue}}</b><br>
+      Highest UnEmployed Ward is: <b>{{unEmployedHighWard}}</b> with <b>{{unEmployedHighValue}}</b><br>
+      Highest Child Headed Ward is: <b>{{childHeadedHighWard}}</b> with <b>{{childHeadedHighValue}}</b><br>
+        </p>
+    
+    <ons-scroller style="height: 100%; width: 100%">
+        
+    <div id="chart1" class='with-3d-shadow with-transitions'>
+        <svg></svg>
+    </div>
+   
+    </ons-scroller>
+
+</ons-page>

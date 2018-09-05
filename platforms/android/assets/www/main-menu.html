@@ -1,0 +1,96 @@
+<!--<ons-navigator animation="slide" var="gallery">-->
+    <ons-page ng-controller="branchesController" ng-init="checkIfLoggedIn()">
+        <ons-toolbar fixed-style>
+           <div class="left">
+                <!--<ons-toolbar-button ng-click="appNavigator.pushPage('voice-search.html')">
+                    <ons-icon icon="ion-speakerphone" fixed-width="false"></ons-icon>
+                </ons-toolbar-button>-->
+            </div>
+            <div class="center"><img src="icon.png" height="45"/></div>
+        
+            <div class="right"><ons-toolbar-button ng-click="appNavigator.pushPage('mymenu.html')"><ons-icon icon="ion-navicon-round" size="28px"></ons-icon></ons-toolbar-button></div>
+        </ons-toolbar>
+
+        <div class="app-page">
+            <div class="app-page-menu">
+                <ons-row>
+                    <ons-col>
+                        <ons-button modifier="clean" ng-click="appNavigator.pushPage('category.html',{category: 'votingstations', categoryTitle: 'Voting Stations'});">
+                            <img src="images/menu/votingstations.png">
+                            <p>Voting Stations</p>
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+                <ons-row>
+                    <ons-col>
+                        <ons-button modifier="clean" ng-click="appNavigator.pushPage('category.html',{category: 'parks', categoryTitle: 'Parks'});">
+                            <img src="images/menu/parks.png">
+                            <p>Parks</p>
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+                
+                <ons-row>
+                    <ons-col>
+                        <ons-button modifier="clean" ng-click="appNavigator.pushPage('category.html',{category: 'clinics', categoryTitle: 'Clinics'});">
+                            <img src="images/menu/clinics.png">
+                            <p>Clinics</p>
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+                
+                <ons-row>
+                    <ons-col>
+                        <ons-button modifier="clean" ng-click="appNavigator.pushPage('category.html',{category: 'schools', categoryTitle: 'Schools'});">
+                            <img src="images/menu/schools.png">
+                            <p>Schools</p>
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+                
+                <ons-row>
+                    <ons-col>
+                        <ons-button modifier="clean" ng-click="appNavigator.pushPage('category.html',{category: 'artcentres', categoryTitle: 'Art Centres'});">
+                            <img src="images/menu/artcenters.png">
+                            <p>Art Centres</p>
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+                <ons-row>
+                    <ons-col>
+                        <ons-button modifier="clean" ng-click="appNavigator.pushPage('category.html',{category: 'ccc', categoryTitle: 'Customer Call Centres'});">
+                            <img src="images/menu/ccc.png">
+                            <p>Customer Call Centres</p>
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+                <ons-row>
+                    <ons-col>
+                        <ons-button modifier="clean" ng-click="appNavigator.pushPage('category.html',{category: 'police', categoryTitle: 'Police'});">
+                            <img src="images/menu/policestation.png">
+                            <p>Police</p>
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+                <!--<ons-row>
+                    <ons-col>
+                        <ons-button modifier="clean" ng-click="appNavigator.pushPage('hrinformation.html',{category: 'human', categoryTitle: 'Human Resources'});">
+                            <img src="images/menu/hr.png">
+                            <p>Human Resources</p>
+                        </ons-button>
+                    </ons-col>
+                </ons-row>-->
+                <ons-row>
+                    <ons-col>
+                        <ons-button modifier="clean" ng-click="appNavigator.pushPage('poi.html');">
+                            <img src="images/menu/poi.png">
+                            <p>Points of Interest</p>
+                        </ons-button>
+                    </ons-col>
+                </ons-row>
+            </div>
+
+        </div>
+
+    </ons-page>
+<!--</ons-navigator>-->

@@ -1,0 +1,120 @@
+<ons-page ng-controller="indigentController" ng-init="loadLivingConditions()">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button></ons-back-button>
+			<!--<ons-toolbar-button ng-click="loadAcceptedDetailsSign()"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back</ons-toolbar-button>-->
+        </div>
+        <div class="center">LivingCondition</div>
+		<!--<div class="right">
+			<ons-toolbar-button ng-click="acceptedHome()"><i class="fa fa-home" aria-hidden="true"></i>Home</ons-toolbar-button></div>-->
+		<div class="right">
+			<ons-toolbar-button ng-click="acceptedHome()"><i class="fa fa-home" aria-hidden="true"></i>Home</ons-toolbar-button>
+			<ons-toolbar-button ng-click="loadAcceptedDetailsSign()"><i class="fa fa-file-text-o" aria-hidden="true"></i>Details</ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <ons-scroller style="height: 100%; width: 100%">
+        <div class="app-page">
+            <div class="app-page-photo">
+
+                <ons-list modifier="inset" style="margin-top: 10px">
+
+                    <ons-list-item>
+                        <textarea class="textarea textarea--transparent" placeholder="Comment" ng-model="comment" maxlength="200" style="width: 100%; height: 100px;">{{comment}}</textarea>
+                    </ons-list-item>
+
+                   
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                            Ownership Type <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.residentialDetail.ownership}}</span>
+                        </div>
+                    </ons-list-item>
+
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                            Type of House <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.residentialDetail.propertyKind}}</span>
+                        </div>
+                    </ons-list-item>
+
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                            Inside Rooms <span class="label label-danger">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.residentialDetail.innerSpace}}</span>
+                        </div>
+                    </ons-list-item>
+
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                            Outside Rooms <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.residentialDetail.outerSpace}}</span>
+                        </div>
+                    </ons-list-item>
+					<ons-row>
+                        <ons-col>
+                            <div class="living-conditions">
+                                <img ng-src='{{image1}}' width="100" height="100"/><br>
+                                <ons-button class="btn-distance" ng-click="cameraTakePicture1()">
+                                    ADD IMAGE
+                                </ons-button>
+                            </div>
+                        </ons-col>
+                        <ons-col>
+                            <div class="living-conditions">
+                                <img ng-src='{{image2}}' width="100" height="100"/><br>
+                                <ons-button class="btn-distance" ng-click="cameraTakePicture2()">
+                                    ADD IMAGE
+                                </ons-button>
+                            </div>
+                        </ons-col>
+                    </ons-row>
+                    <ons-row>
+                        <ons-col>
+                            <div class="living-conditions">
+                                <img ng-src='{{image3}}' width="100" height="100"/><br>
+                                <ons-button class="btn-distance" ng-click="cameraTakePicture3()">
+                                    ADD IMAGE
+                                </ons-button>
+                            </div>
+                        </ons-col>
+                        <ons-col>
+                            <div class="living-conditions">
+                                <img ng-src='{{image4}}' width="100" height="100"/><br>
+                                <ons-button class="btn-distance" ng-click="cameraTakePicture4()">
+                                    ADD IMAGE
+                                </ons-button>
+                            </div>
+                        </ons-col>
+                    </ons-row>
+                    
+                    <ons-row>
+                        <ons-col>
+                            <div class="living-conditions">
+                                <img ng-src='{{image5}}' width="100" height="100"/><br>
+                                <ons-button class="btn-distance" ng-click="cameraTakePicture5()">
+                                    ADD IMAGE
+                                </ons-button>
+                            </div>
+                        </ons-col>
+                        <ons-col>
+                            <div class="living-conditions">
+                                <img ng-src='{{image6}}' width="100" height="100"/><br>
+                                <ons-button class="btn-distance" ng-click="cameraTakePicture6()">
+                                    ADD IMAGE
+                                </ons-button>
+                            </div>
+                        </ons-col>
+                    </ons-row>
+
+                </ons-list>
+				<br>
+                <div align="center">
+					<button class="button button-block button-linkedin" ng-click="saveLivingConditions()">
+							 Save
+					</button>
+				</div>
+				<br>
+            </div>
+        </div>
+    </ons-scroller>
+
+</ons-page>
+

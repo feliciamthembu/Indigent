@@ -1,0 +1,14 @@
+{
+  "name": "camera",
+  "homepage": "https://github.com/pixedelic/Camera",
+  "_release": "6e76de15a8",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6e76de15a86488e8d7a98aba041443e036e38e6b"
+  },
+  "_source": "https://github.com/pixedelic/Camera.git",
+  "_target": "*",
+  "_originalSource": "camera",
+  "_direct": true
+}

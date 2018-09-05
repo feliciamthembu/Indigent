@@ -1,0 +1,152 @@
+
+<ons-page ng-controller="logCallsController" ng-init="init()">
+    <ons-toolbar>
+        <div class="left"> 
+      <ons-back-button>Back</ons-back-button>
+    </div>
+        <div class="center">My Menu</div>
+    </ons-toolbar>
+    <div class="app-page">
+
+        <!-- settings with icons -->
+        <div class="settings-header">Profile</div>
+        <ons-list modifier="inset" class="settings-list">
+           <!-- 
+            <ons-list-item modifier="chevron" ng-click="appNavigator.pushPage('logcall.html');">
+                <ons-icon icon="fa-comment" size="20px"></ons-icon>
+                Log a call
+                
+            </ons-list-item>
+
+            <ons-list-item modifier="chevron">
+                <ons-icon icon="fa fa-comments" size="20px"></ons-icon>
+                My Logged Calls ({{numOfCalls < 0 ? 0 : numOfCalls}})
+            </ons-list-item>
+-->
+            <ons-list-item modifier="chevron" ng-click="appNavigator.pushPage('userprofile.html');">
+                <ons-icon icon="fa-user" size="20px"></ons-icon>
+                My Profile
+            </ons-list-item>
+            
+            </ons-list>
+    </div>
+    
+    <div class="settings-header">My Admin</div>
+        <ons-list modifier="inset" class="settings-list">
+            
+           <!-- <ons-list-item modifier="chevron" ng-click="appNavigator.pushPage('vehicles.html');">
+                <i class="fa fa-car" aria-hidden="true"></i>
+                eFleet
+            </ons-list-item>-->
+            
+            <ons-list-item modifier="chevron" ng-click="appNavigator.pushPage('indigent-main.html');">
+                <ons-icon icon="fa-user" size="20px"></ons-icon>
+                Indigent
+            </ons-list-item>
+            
+            <ons-list-item modifier="chevron" ng-click="appNavigator.pushPage('hrinformation.html');">
+                <ons-icon icon="fa-user" size="20px"></ons-icon>
+                Human Resource
+            </ons-list-item>
+            
+            <!--<ons-list-item modifier="chevron" ng-click="appNavigator.pushPage('purchaseorder.html');">
+                <i class="fa fa-first-order" aria-hidden="true"></i>
+                Purchase Order
+            </ons-list-item>
+            
+            <ons-list-item modifier="chevron" ng-click="appNavigator.pushPage('goodsreturnednotes.html');">
+                <i class="fa fa-sticky-note" aria-hidden="true"></i>
+                Goods Returned Notes
+            </ons-list-item>
+           
+            <ons-list-item modifier="chevron" ng-click="appNavigator.pushPage('notifications.html');">
+                <ons-icon icon="fa-user" size="20px"></ons-icon>
+                Notifications
+            </ons-list-item>-->
+            
+                
+           <!-- </ons-list-item>
+            
+             <ons-list-item modifier="chevron" ng-click="appNavigator.pushPage('talktocounsellor.html');">
+                <ons-icon icon="fa-comment" size="20px"></ons-icon>
+                Talk to My Councillor
+                
+            </ons-list-item>
+                
+             <ons-list-item modifier="chevron" ng-click="appNavigator.pushPage('counsellor.html');">
+                <ons-icon icon="fa-comment" size="20px"></ons-icon>
+                Councillor
+                
+            </ons-list-item>-->
+            
+<!--
+            <ons-list-item modifier="chevron">
+                <ons-icon icon="fa-times-circle" size="20px"></ons-icon>
+                My Counsellor
+                
+            </ons-list-item>-->
+
+
+            <!--<ons-list-item modifier="chevron">
+                <ons-icon icon="fa fa-graduation-cap" size="20px"></ons-icon>
+                See Schools
+                <span class="list-item-note lucent">List schools</span>
+            </ons-list-item>
+
+            <ons-list-item modifier="chevron">
+                <ons-icon icon="fa fa-location-arrow" size="20px"></ons-icon>
+                See Voting Stations
+                <span class="list-item-note lucent">List voting stations</span>
+            </ons-list-item>
+
+            <ons-list-header>Other</ons-list-header>
+
+            <ons-list-item modifier="chevron">
+                <ons-icon icon="fa-cog" size="20px"></ons-icon>
+                Settings
+            </ons-list-item>
+
+            <ons-list-item modifier="chevron">
+                <ons-icon icon="fa-minus-circle" size="20px"></ons-icon>
+                Reset All Preferences
+            </ons-list-item>-->
+
+        </ons-list>
+
+        
+        <div class="settings-header">Settings</div>
+            
+        <ons-list modifier="inset" class="settings-list">
+        <ons-list-item modifier="tappable" ng-click="changeView(0)">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a" ng-checked="viewsettings == 0 ? true : false">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            List View
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable" ng-click="changeView(1)">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a" ng-checked="viewsettings == 1 ? true : false">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            Map View
+          </label>
+        </ons-list-item>
+
+      </ons-list>
+        
+    <!--    
+      <div class="settings-header">Others</div>
+
+      <ons-list modifier="inset" class="settings-list">
+        <ons-list-item modifier="chevron">
+          Terms of Use
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron">
+          Privacy Policy
+        </ons-list-item>
+      </ons-list>
+-->
+    </div>
+</ons-page>

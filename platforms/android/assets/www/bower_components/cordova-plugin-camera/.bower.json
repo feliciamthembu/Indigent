@@ -1,0 +1,15 @@
+{
+  "name": "cordova-plugin-camera",
+  "homepage": "https://github.com/apache/cordova-plugin-camera",
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.0.0",
+    "commit": "d456eeb7112c4a5603e9103c4de726b478c3577c"
+  },
+  "_source": "https://github.com/apache/cordova-plugin-camera.git",
+  "_target": "^3.0.0",
+  "_originalSource": "https://github.com/apache/cordova-plugin-camera.git",
+  "_direct": true
+}

@@ -1,0 +1,47 @@
+<ons-page ng-controller="indigentController" ng-init="loadDocumentInfo()">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Documents ({{documentInfoImageList.length}})</div>
+        <div class="right">
+			<ons-toolbar-button ng-click="acceptedHome()"><i class="fa fa-home" aria-hidden="true"></i>Home</ons-toolbar-button>
+			<ons-toolbar-button ng-click="loadAcceptedDetailsSign()"><i class="fa fa-file-text-o" aria-hidden="true"></i>Details</ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+	
+    <ons-list modifier="document">
+
+<!--
+        <ons-list-item ng-show="documentInfoList.length == 0">
+            <ons-row>
+                <ons-col>
+                    Document List
+                </ons-col>
+            </ons-row>
+        </ons-list-item>
+-->
+
+        <ons-list-item class="list-location-container" ng-repeat="documentInfo in documentInfoImageList track by $index"  ng-click="SaveFile(documentInfo)">
+            <ons-row>
+                <ons-col>
+                     <button class="button button-block button-linkedin" ng-click="SaveFile(documentInfo)">{{applicantDetails.indigentApplicationDetails.pdfImageNameList[$index]}}</button>
+                    
+                    
+                    <div class="clearfix"></div>
+                </ons-col>
+            </ons-row>
+
+        </ons-list-item>
+
+    </ons-list>
+
+    <ons-list-item ng-show="indigentApplicationDetails.imageNameList.length == 0">
+        <ons-row>
+            No data available.
+        </ons-row>
+    </ons-list-item>
+
+
+</ons-page>
+

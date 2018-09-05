@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+     
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCOUo69jud8ZVGG4sa7ijZ3y6XL_XNmkXg"></script>
+    
+    </head>
+    <title>Indigent</title>
+
+    <!-- All our CSS -->
+    <link rel="stylesheet" href="css/signature-pad.css">
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/plugins.css" />
+    <link rel="stylesheet" href="css/roots.css" />
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/ionicons.css">
+    <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/nv.d3.css">
+    <link rel="stylesheet" href="css/app.css" />
+
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .par-buttons {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            bottom: 10px;
+        }
+
+        .map-buttons {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            top: 10px;
+            right: 15%;
+            z-index: 5;
+        }
+
+        .map-icons {
+            position: absolute;
+            top: 45px;
+            vertical-align: middle;
+            margin: 5px;
+            width: 10%;
+        }
+
+        .btn-delete {
+            z-index: 1
+        }
+
+        .btn-distance {
+            z-index: 1;
+            padding: 0px;
+            margin: 5px;
+        }
+
+        .settings-header {
+            font-weight: 500;
+            font-size: 14px;
+            opacity: 0.4;
+            padding: 10px 0 0px 10px;
+            margin-bottom: -4px;
+        }
+
+        .settings-list {
+            margin-top: 10px;
+        }
+    </style>
+
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDEvah36S2nPuX5wanvLT_rBsEve0ikZ3k"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEvah36S2nPuX5wanvLT_rBsEve0ikZ3k"></script>
+    <script src="lib/onsen/js/angular/angular.js"></script>
+    <script src="lib/onsen/js/jquery-3.1.0.min.js"></script>
+    <script src="lib/onsen/js/angular/angular-touch.js"></script>
+    <script src="lib/angular-messages.min.js"></script>
+     <script src="lib/angular-messages.min.js"></script>
+   <script src="lib/firebase.js"></script>
+  <script src="lib/geofire.js"></script>
+    <script src="lib/geofire.min.js"></script>
+    
+    
+<!--    <script src="bower_components/angular-sqlite/angular-sqlite.js"></script>-->
+    <script src="lib/signature_pad.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
+    
+    
+   
+    <!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
+<!-- GeoFire -->
+<script src="https://cdn.firebase.com/libs/geofire/4.1.2/geofire.min.js"></script>
+    
+    
+<!--  Firebase scripting   -->
+    
+    <script>
+ //Connection to your firebase database
+ geoFire.initializeApp({
+ apiKey: "AIzaSyCf2bGtxI7-mlxysZTuK-sVLKpjoVYJksA",
+ databaseURL: "https://onesignalexample-11e3c.firebaseio.com"
+ });
+ 
+ //Create a node at firebase location to add locations as child keys
+ var locationsRef = Firebase.database().ref(“feildworkerlocations”).push();
+ 
+ // Create a new GeoFire key under users Firebase location
+ var geoFire = new GeoFire(firebaseRef.child(“geofire”));
+
+</script>
+    
+<!-- The end   -->
+    
+    
+    
+
+    <body ng-controller="networkController">
+
+
+        <ons-navigator var="appNavigator" page="signin.html"></ons-navigator>
+
+
+        <!-- Insert the modal in your index.html -->
+        <!-- Change the message to anything you want, this message will be if the user doesn't have any network connection -->
+        <ons-modal var="offlineMessage">
+            Unable to connect to the Internet.
+            <br> Possibly due to a network error.
+            <br> Please verify your connection.
+        </ons-modal>
+
+        <ons-modal var="modal">
+            <ons-icon icon="ion-load-c" spin="true"></ons-icon>
+
+
+            <div class="center">
+                <img src="images/menu/didyouknow.png" />
+            </div>
+
+
+            <p></p>
+            Did you know?
+            <br>
+            <br> {{didYouKnowMessage}}
+            <br>
+            <br> Brought to you by Ekurhuleni Metropolitan Municipality
+        </ons-modal>
+
+        <ons-alert-dialog animation="default" var="declineApplicationDialog" ng-controller="indigentController" cancelable>
+            <div class="alert-dialog-title">Decline this application</div>
+            <div class="alert-dialog-content">
+                <ons-list-item>
+                    <select ng-model="declineReason" ng-options="reason.id as reason.name for reason in declineReasonList">
+            </select>
+                </ons-list-item>
+            </div>
+            <div class="alert-dialog-footer">
+                <button class="alert-dialog-button" ng-click="declineButtonDialog()">Decline</button>
+            </div>
+        </ons-alert-dialog>
+
+
+
+    </body>
+
+</html>

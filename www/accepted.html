@@ -1,0 +1,53 @@
+<ons-page ng-controller="indigentController" ng-init="loadAccepted()">
+    <ons-toolbar>
+        <!--<div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>-->
+        <div class="center">Accepted ({{acceptedList.length}})</div>
+<!--
+		<div class="right">
+			<ons-refresh-button ng-click="message1">Load</ons-refresh-button>
+        </div>
+-->
+    </ons-toolbar>
+
+    <ons-list modifier="accepted">
+
+        <ons-list-item class="list-location-container" ng-repeat="accepted in acceptedList track by accepted._id" ng-click="loadAcceptedDetails(accepted)">
+            <ons-row>
+                <ons-col>
+                    
+                    
+                    <div class="name">
+                        Application Reference No <span class="label label-default">
+                        {{accepted.indigentApplicationDetails.indigentApplicationHeader.applicationRefNo}}
+                        </span>
+                    </div>
+
+                    <div class="name">
+                         First Name  <span class="label label-default">
+                        {{accepted.indigentApplicationDetails.householdDetail[0].personDetail.firstNames}}  {{accepted.indigentApplicationDetails.householdDetail[0].personDetail.surname}}
+                        </span>
+                        </div>
+
+                    <div class="name">
+                        Application Date  <span class="label label-default">
+                        {{accepted.indigentApplicationDetails.indigentApplicationHeader.applicationDate  | date:'yyyy-MM-dd'}}
+                        </span>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </ons-col>
+            </ons-row>
+
+        </ons-list-item>
+
+    </ons-list>
+
+    <ons-list-item ng-show="acceptedList.length == 0">
+        <ons-row>
+            No data available.
+        </ons-row>
+    </ons-list-item>
+
+</ons-page>

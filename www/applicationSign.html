@@ -1,0 +1,31 @@
+<ons-page ng-controller="indigentController" ng-init="loadSignature()">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Signature</div>
+		<div class="right">
+			<ons-toolbar-button ng-click="acceptedHome()"><i class="fa fa-home" aria-hidden="true"></i>Home</ons-toolbar-button>
+			<ons-toolbar-button ng-click="loadAcceptedDetailsSign()"><i class="fa fa-file-text-o" aria-hidden="true"></i>Details</ons-toolbar-button>
+        </div>
+		
+    </ons-toolbar>
+	<br>
+	<div align="center">
+    <canvas id='signatureCanvas' width='400' height='180' style='border: 1px solid black;'></canvas>
+    </div>
+	<br>
+	<div align="center">
+          <div class='button-bar'>
+              <ons-list-item>
+                        <a class="btn-distance" ng-click='clearCanvas()' ><i class="fa fa-eraser" aria-hidden="true"></i> Clear</a>
+              <a class="btn-distance"  ng-click='saveCanvas()'><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</a>
+                    </ons-list-item>
+          </div>
+		</div>
+          <br>
+          <img ng-src='{{signature}}' />
+
+
+</ons-page>
+

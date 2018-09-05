@@ -1,0 +1,39 @@
+
+<ons-page ng-controller="indigentController">
+  <ons-toolbar>
+        <div class="center">Indigent</div>
+        
+      </ons-toolbar>
+
+ <br><br>
+    <p align="center">
+    
+    <button class="button button-block button-google" ng-click="appNavigator.pushPage('indigent-mainmenu.html',{category: 'Assigments'})">
+                        
+                        Assigments</button>
+         <br><br>
+     <!--<button class="button button-block button-facebook" ng-click="appNavigator.pushPage('indigent-mainmenu.html',{category: 'Accepted'})">
+                        
+                        Accepted</button>-->
+		<button class="button button-block button-facebook" ng-click="showAccepted()">
+                        
+                        Accepted</button>
+         <br><br>
+     <!--<button class="button button-block button-twitter" ng-click="appNavigator.pushPage('indigent-mainmenu.html',{category: 'Declined'})">
+                        
+                        Declined</button>
+        
+           <br><br>-->
+     <button class="button button-block button-google" ng-click="appNavigator.pushPage('indigent-mainmenu.html',{category: 'Rejected'})">
+                        
+                        Rejected</button>
+    <br><br> 
+        
+    <button class="button button-block button-facebook" ng-click="appNavigator.pushPage('indigent-mainmenu.html',{category: 'Closed'})">
+                        
+                        Closed</button>
+    <br><br> 
+
+  </p>
+    
+</ons-page>

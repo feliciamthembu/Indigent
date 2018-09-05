@@ -1,0 +1,20 @@
+<ons-page ng-controller="indigentController" ng-init="loadDocumentInfo()">
+ 
+    
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">Documents</div>
+		<div class="right">
+			<ons-toolbar-button ng-click="acceptedHome()"><i class="fa fa-home" aria-hidden="true"></i>Home</ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <div class="wrapper" ng-controller="DocCtrl">
+        <h1>{{pdfName}}</h1>
+        <ng-pdf template-url="viewer.html" canvasid="pdf" scale="page-fit"></ng-pdf>
+    </div>
+
+
+</ons-page>

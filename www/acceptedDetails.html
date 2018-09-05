@@ -1,0 +1,252 @@
+<ons-page ng-controller="indigentController" ng-init="showAcceptedDetails()">
+    <ons-toolbar>
+        <div class="left">
+            <!--<ons-back-button>Back</ons-back-button>-->
+			<ons-toolbar-button ng-click="acceptedHomeAccepted()"><i class="fa fa-chevron-left fa-lg" aria-hidden="true" ></i> </ons-toolbar-button>
+        </div>
+        <div class="center">Assignment</div>
+		<div class="right">
+			<ons-toolbar-button ng-click="acceptedHome()"><i class="fa fa-home" aria-hidden="true"></i> Home</ons-toolbar-button>
+        </div>
+        <!--<div class="right">
+
+            <ons-toolbar-button ng-click="setApplicationAccepted()"><i class="fa fa-check-square-o" aria-hidden="true"></i>Accept</ons-toolbar-button>
+            
+            <ons-toolbar-button ng-click="declineButtonDialog()"><i class="fa fa-ban" aria-hidden="true"></i>Decline</ons-toolbar-button>
+        
+        </div>-->
+
+    </ons-toolbar>
+    
+    
+    <div class="right" ng-show="isFetching">
+      <ons-toolbar-button><ons-icon icon="ion-loading-c" fixed-width="false" ></ons-icon></ons-toolbar-button>
+    </div>
+
+    <ons-scroller style="height: 100%; width: 100%">
+        <div class="app-page">
+            <div class="app-page-photo">
+
+                <p align="center">
+                    
+                    <button class="button button-block button-linkedin" ng-click="userlocation()">
+                         Location
+                    </button>
+                    <br>
+                    <br>
+                    <button class="button button-block button-linkedin" ng-click="viewDocumentInfo()">
+                         Documents
+                    </button>
+                    <br>
+                    <br>
+					<button class="button button-block button-linkedin" ng-click="viewHouseholds()">
+                         Household Members
+                    </button>
+
+                    <br>
+                    <br>
+					
+                    <button class="button button-block button-linkedin" ng-click="showLivingConditionsDetails(applicantDetails)">
+                        Living Conditions
+                    </button>
+
+                    <br>
+                    <br>
+                    <button class="button button-block button-linkedin" ng-click="showCustomerSign(applicantDetails)">
+                         Signatures	
+                    </button>
+                     <br>
+                     <br>
+                    
+						<button class="button button-block button-linkedin" ng-click="unavailable()">
+							 Unavailable
+						</button>
+                    <br>
+                    <br>
+
+                    
+                    <button align="center" class="button button-block button-linkedin" ng-click="recommendApplication1()">
+                         Recommendation
+                    </button>
+                    <br>
+					<br>
+                    
+                    
+                </p>
+
+                <ons-list modifier="inset" style="margin-top: 10px" class="scrollme" ng-scrollbar is-bar-shown="true">
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                            
+                            Application Reference No <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.applicationRefNo}}
+							</span>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                           
+                            EMM Account Number <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.emmAccountNo}}</span>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                            
+                            Application Type <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.applicantKind}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                     <ons-list-item>
+                        <div class="app-open-desc">
+                            
+                            Indigent Application Type <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.applicationType}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+                            
+                            Application Date <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.applicationDate | date:'dd/MM/yyyy'}}</span>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Customer Care Area <span class="label label-default">{{applicantDetails.indigentApplicationDetails.indigentApplicationHeader.applicationCCC}}</span>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            ID Number <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.idNo}}</span>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Passport Number <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.passportNo}}</span>
+                        </div>
+                    </ons-list-item>
+
+
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Title <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.title}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Initials <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.initials}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            First Name <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.firstNames}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Last Name <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.surname}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Gender <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.gender}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Date of Birth <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.birthDate | date:'yyyy-MM-dd'}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Marital Status <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.personDetail.maritalStatus}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    
+                     <ons-list-item>
+                        <div class="app-open-desc">
+
+                            ResidentialAddress <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.residentialAddress.addressLine1}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    
+                     <ons-list-item>
+                        <div class="app-open-desc">
+
+                            Suburb <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.residentialAddress.suburb}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    <ons-list-item>
+                        <div class="app-open-desc">
+
+                            wardNo <span class="label label-default">{{applicantDetails.indigentApplicationDetails.originalApplicantDetail.residentialAddress.wardNo}}</span>
+                        </div>
+                    </ons-list-item>
+                    
+                    
+                    
+                    
+                    
+                    
+
+
+                </ons-list>
+				<br>
+				<div align="center">
+					
+					<button  align="center" class="button button-block button-linkedin" ng-click="CompleteApplication()">
+							 Complete
+					</button>
+				</div>
+				<br>
+<!--
+				<button class="button button-block button-linkedin" ng-click="userlocation()">
+                         Save Location
+                </button>
+-->
+            </div>
+        </div>
+    </ons-scroller>
+	<ons-modal color="grey" var="declineModal" direction="up">
+			
+		  <div style="text-align: center">
+			  Select Reason Declining :
+				<select ng-model="reason">
+						<option ng-repeat="reason in declineReasonList" value="{{reason.name}}" required>{{reason.name}}</option>
+					</select>
+			 <table align="center">
+			  <tr ng-show="reason == 'Other'">
+				<td>
+					<label> Details: </label>
+				</td>
+				<td>
+					<textarea ng-model="other" type="text" name="other" style="margin: 0px; height: 9px; width: 303px;" required></textarea>
+				</td>
+			</tr>
+		</table>
+			  <div align="center">
+				  <ons-button ng-click="setApplicationDeclined()">Decline</ons-button>
+				  <ons-button ng-click="declineModal.hide()">Cancel</ons-button>
+			  </div>
+		  </div>
+	</ons-modal>
+
+
+</ons-page>

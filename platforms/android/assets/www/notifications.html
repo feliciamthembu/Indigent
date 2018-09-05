@@ -1,0 +1,28 @@
+<ons-page ng-controller="notificationsController" ng-init="execute()">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Cancel</ons-back-button>
+        </div>
+        <div class="center">Notifications ({{notificationList.length}})</div>
+    </ons-toolbar>
+    
+      <ons-list>
+    
+        <ons-list-item modifier="chevron tappable" class="list-item-container" ng-repeat="(id, item) in notificationList" id="{{ id }}">
+          <div class="list-item-left">
+            <img src="images/4548488065_dae90277db_q.jpg" class="avatar">
+          </div>
+          <div class="list-item-right">
+            <div class="list-item-content">
+              <div class="name">{{item.title}}
+                <span class="lucent"></span>
+              </div>
+
+              <span class="desc">{{item.message}}</span>
+            </div>
+          </div>
+        </ons-list-item>
+
+      </ons-list>
+
+</ons-page>

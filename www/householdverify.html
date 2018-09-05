@@ -1,0 +1,121 @@
+<ons-page ng-controller="indigentController" ng-init="loadHouseholdDetails()">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">{{householdmember.currentApplicationRefNo}}</div>
+		<div class="right">
+			<ons-toolbar-button ng-click="acceptedHome()"><i class="fa fa-home" aria-hidden="true"></i>Home</ons-toolbar-button>
+			<ons-toolbar-button ng-click="loadAcceptedDetailsSign()"><i class="fa fa-file-text-o" aria-hidden="true"></i>Details</ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+
+
+    <ul class="list">
+        <li class="list__item">
+            <div class="list__item__center">
+                Verified
+            </div>
+            <div class="list__item__right">
+                <label class="switch">
+					<input type="checkbox" class="switch__input" ng-model="householdmember.isVerified" ng-true-value="'Yes'" ng-false-value="'No'" value="{{householdmember.isVerified}}"/> <!-- Pass the specific id -->
+					<!--<input type="checkbox" id="switch-1" class="switch__input" ng-model="houseHoldMemberVerified" checked/>-->
+                    <div class="switch__toggle">
+                        <div class="switch__handle"></div>
+                    </div>
+                </label>
+            </div>
+        </li>
+        <!--<li class="list__item">
+            <div class="list__item__center">
+                Comments
+            </div>
+                        <ons-list-item>
+                        <textarea class="textarea textarea--transparent" placeholder="remarks" style="width: 100%; height: 100px;"></textarea>
+                    </ons-list-item>
+
+        </li>-->
+<li class="list__item">
+            <div class="list__item__center">
+                Comments
+            
+                        <ons-list-item>
+                        <textarea id="orderId" ng-show="householdmember.isVerified == 'Yes'" class="textarea textarea--transparent" placeholder="remarks" ng-model="householdmember.remarks"  maxlength="50" style="width: 100%; height: 100px;">{{householdmember.remarks}}</textarea>
+                            
+                            
+                
+                            
+                    </ons-list-item>
+                
+                
+                
+			</div>
+        </li>
+        <li class="list__item">
+            <div class="list__item__center">
+                Relationship
+            </div>
+            
+            <div class="name">{{householdmember.personDetail.relationship}}</div>
+        </li>
+        <li class="list__item">
+            <div class="list__item__center">
+                Initials
+            </div>
+            <div class="name">{{householdmember.personDetail.initials}}</div>
+             
+            
+            
+        </li>
+        <li class="list__item">
+            <div class="list__item__center">
+                Surname
+            </div>
+
+            <div class="name">{{householdmember.personDetail.surname}}</div>
+            
+            
+        </li>
+        <li class="list__item">
+            <div class="list__item__center">
+                First Names
+            </div>
+            <div class="list__item__right">
+                
+                    {{householdmember.personDetail.firstNames}}
+               
+            </div>
+        </li>
+        
+        <li class="list__item">
+            <div class="list__item__center">
+                Gender
+            </div>
+
+            <div class="name">{{householdmember.personDetail.gender}}</div>
+            
+            
+        </li>
+        
+        <li class="list__item">
+            <div class="list__item__center">
+                Birth Date
+            </div>
+            <div>
+                
+                    {{householdmember.personDetail.birthDate | date:'dd/MM/yyyy'}}
+                
+            </div>
+        </li>
+        
+    </ul>
+	<br>
+    <div align="center">
+    <button class="button button-block button-linkedin" ng-click="addHouseMember(householdmember)">
+                         Save
+                </button>
+    
+    </div>
+	<br>
+</ons-page>

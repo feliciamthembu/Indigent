@@ -1,0 +1,32 @@
+
+<ons-page ng-controller="networkController">
+    <ons-toolbar>
+        
+        <div class="center">Sign Up</div>
+        <div class="right"><ons-toolbar-button ng-click="signIn()"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</ons-toolbar-button></div>
+    </ons-toolbar>
+
+ <br><br>
+    <p align="center">
+    
+    <button class="button button-block button-google" ng-click="googleSignIn()">
+                        <i class="icon ion-social-google placeholder-icon" ></i>
+                        Sign Up with Google</button>
+         <br><br>
+     <button class="button button-block button-facebook" ng-click="facebookSignIn()">
+                        <i class="icon ion-social-facebook placeholder-icon"></i>
+                        Sign Up with Facebook</button>
+         <br><br>
+     <button class="button button-block button-twitter" ng-click="twitterSignIn()">
+                        <i class="icon ion-social-twitter placeholder-icon"></i>
+                        Sign Up with Twitter</button>
+        
+           <br><br>
+     <button class="button button-block button-linkedin" ng-click="linkedInSignIn()">
+                        <i class="icon ion-social-twitter placeholder-icon"></i>
+                        Sign Up with LinkedIn</button>
+    <br><br>    
+
+  </p>
+    
+</ons-page>
